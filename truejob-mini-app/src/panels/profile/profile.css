@@ -1,0 +1,50 @@
+p {
+    margin: 0;
+}
+
+.cells {
+    margin-left: 15px;
+    margin-right: 9px;
+}
+
+.second {
+    margin-top: 10px;
+}
+
+.favorite-vacancy {
+    display: flex;
+    align-items: center;
+}
+
+.add-vacancy {
+    display: flex;
+    align-items: center;
+}
+
+.favorite-vacancy p,
+.add-vacancy p {
+    padding-left: 10px;
+}
+
+.worker-rate,
+.employer-rate {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rate {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.rate span {
+    padding-right: 20px;
+}
+
+.rate .star {
+    position: absolute;
+    right: 0;
+    top: 1px;
+}

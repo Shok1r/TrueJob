@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import bridge from '@vkontakte/vk-bridge';
-import View from '@vkontakte/vkui/dist/components/View/View';
-import Root from '@vkontakte/vkui/dist/components/Root/Root';
-import ScreenSpinner from '@vkontakte/vkui/dist/components/ScreenSpinner/ScreenSpinner';
-import ErrorSnackbar from './errors/errorSnackbar';
-import '@vkontakte/vkui/dist/vkui.css';
+import {View, Root, ScreenSpinner} from '@vkontakte/vkui'
+import ErrorSnackbar from '../errors/errorSnackbar';
+import {FirstIntro, SecondIntro, MainNavigation} from '../panels';
 
-import MainPage from './panels/MainPage';
-import { FirstIntro, SecondIntro } from './panels/introPanels';
+import '@vkontakte/vkui/dist/vkui.css';
 
 // Для навигации внутри mainView
 const ROUTES = {
@@ -55,10 +52,9 @@ const App = () => {
 			});
 			const data = {};
 
-
-			storageData.keys.forEach(({ key, value }) => {
+			storageData.keys.forEach(({key, value}) => {
 				try {
-					throw new Error('Error');
+					// throw new Error('Error');
 					data[key] = value ? JSON.parse(value) : {};
 					switch (key) {
 						case STORAGE_KEYS.STATUS:
@@ -75,17 +71,11 @@ const App = () => {
 				}
 			})
 
-			console.log(storageData);
-
 			setUser(user);
 			setPopout(null);
 		}
 		fetchData();
 	}, []);
-
-	const changePanel = (panel) => {
-		setActivePanel(panel);
-	};
 
 	const changeIntroPanel = (panel) => {
 		setActiveIntroPanel(panel);
@@ -110,14 +100,19 @@ const App = () => {
 	return (
 		<Root activeView={activeView}>
 			<View activePanel={activeIntroPanel} id={INTROVIEW}>
-				<FirstIntro id={INTRO[0]} nextPanel={INTRO[1]} changePanel={changeIntroPanel} fetchedUser={fetchedUser} snackbarError={snackbar} userHasSeenIntro={userHasSeenIntro}/>
+				<FirstIntro 
+					id={INTRO[0]} 
+					nextPanel={INTRO[1]} 
+					changePanel={changeIntroPanel} 
+					fetchedUser={fetchedUser} 
+					snackbarError={snackbar} 
+					userHasSeenIntro={userHasSeenIntro}/>
 				<SecondIntro id={INTRO[1]} changePanel={viewIntro} />	
 			</View>
-			<View activePanel={activePanel} popout={popout} id={MAINVIEW}>
-				<MainPage id={MAINPAGE} fetchedUser={fetchedUser} snackbarError={snackbar}/>
-			</View>
+			<MainNavigation 
+				id={MAINVIEW}
+				fetchedUser={fetchedUser}/>
 		</Root>
-
 	);
 }
 
