@@ -1,7 +1,5 @@
 import React from 'react';
-import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
-import Div from '@vkontakte/vkui/dist/components/Div/Div';
-import Button from '@vkontakte/vkui/dist/components/Button/Button';
+import {Panel, Div, Button} from '@vkontakte/vkui';
 
 import './Intro.css';
 import image from '../../img/IntroImage.png';

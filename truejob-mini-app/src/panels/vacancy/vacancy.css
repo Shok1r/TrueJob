@@ -1,0 +1,29 @@
+.vacancy-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.vacancy-list-item {
+    padding: 10px 15px;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid #EDEEF0;
+    border-radius: 8px;
+}
+
+.vacancy-list-item:first-child {
+    margin-top: 0;
+}
+
+@media screen and (min-width: 575px) {
+	.vacancy-list-item {
+        width: 49%;
+    }
+    
+    .vacancy-list-item:first-child,
+    .vacancy-list-item:nth-child(2) {
+        margin-top: 0;
+    }
+}

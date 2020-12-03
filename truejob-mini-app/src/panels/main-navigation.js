@@ -5,7 +5,7 @@ import Icon28PlaceOutline from '@vkontakte/icons/dist/28/place_outline';
 import Icon28ListAddOutline from '@vkontakte/icons/dist/28/list_add_outline';
 import Icon28Profile from '@vkontakte/icons/dist/28/profile';
 
-import Profile from './profile/profile';
+import {Profile, Vacancy} from './index';
 
 const MainNavigation = ({fetchedUser}) => {
    
@@ -34,7 +34,7 @@ const MainNavigation = ({fetchedUser}) => {
                     onClick={() => onStoryChange('add-vacancy')}
                     selected={activeStory === 'add-vacancy'}
                     data-story="add-vacancy"
-                    text="Добавить вакансию"
+                    text="Добавить"
                 ><Icon28ListAddOutline /></TabbarItem>
                 <TabbarItem
                     onClick={() => onStoryChange('profile')}
@@ -45,9 +45,7 @@ const MainNavigation = ({fetchedUser}) => {
             </Tabbar>
         }>
             <View id="vacancy" activePanel="vacancy">
-                <Panel id="vacancy">
-                    <PanelHeader>Вакансии</PanelHeader>
-                </Panel>
+                <Vacancy id="vacancy"/>
             </View>
 
             <View id="map" activePanel="map">
@@ -67,7 +65,6 @@ const MainNavigation = ({fetchedUser}) => {
             </View>
         </Epic>
     )
-    
 }
 
 export default MainNavigation;

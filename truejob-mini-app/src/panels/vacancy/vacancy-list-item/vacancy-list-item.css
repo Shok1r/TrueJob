@@ -1,0 +1,20 @@
+.vacancy__title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vacancy h2,
+.vacancy p {
+    margin: 0;
+}
+
+.vacancy__description {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #818C99;
+}
+
+.vacancy__send {
+    width: 100%;
+}

@@ -11,11 +11,7 @@ p {
     margin-top: 10px;
 }
 
-.favorite-vacancy {
-    display: flex;
-    align-items: center;
-}
-
+.favorite-vacancy,
 .add-vacancy {
     display: flex;
     align-items: center;
@@ -47,4 +43,15 @@ p {
     position: absolute;
     right: 0;
     top: 1px;
+}
+
+.help,
+.about {
+    display: flex;
+    align-items: center;
+}
+
+.help p,
+.about p {
+    padding-left: 10px;
 }
